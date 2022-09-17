@@ -1,3 +1,10 @@
+:root {
+  --primary-font: "Playfair Display SC", serif;
+  --secondary-font: "Open Sans", sans-serif;
+  --primary-color: rgb(34, 43, 36);
+  --background-color: rgb(238, 220, 202);
+}
+
 .Phonetic {
   height: 60px;
 }
@@ -5,7 +12,7 @@
 .Phonetic a {
   border: 1px solid gray;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 20px;
   transition: all 150mx ease-in-out;
   font-size: 12px;
@@ -13,8 +20,8 @@
 }
 
 .Phonetic a:hover {
-  background: purple;
-  color: white;
+  background: var(--primary-color);
+  color: var(--background-color);
 }
 
 .Phonetic .text {

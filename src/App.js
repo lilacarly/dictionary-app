@@ -9,7 +9,16 @@ function App() {
         <main>
           <Dictionary defaultKeyword="dictionary" />
         </main>
-        <footer className="text-center">By Lila Graham</footer>
+        <footer className="text-center">
+          By Lila Graham,{" "}
+          <a
+            href="https://github.com/lilacarly/dictionary-app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Github
+          </a>
+        </footer>
       </div>
     </div>
   );

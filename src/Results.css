@@ -1,5 +1,13 @@
+:root {
+  --primary-font: "Playfair Display SC", serif;
+  --secondary-font: "Open Sans", sans-serif;
+  --primary-color: rgb(34, 43, 36);
+  --background-color: rgb(238, 220, 202);
+}
 .Results h2 {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: bold;
   line-height: 1.5;
+  font-family: var(--primary-font);
+  color: var(--primary-color);
 }

@@ -1,14 +1,29 @@
-.Dictionary section {
-  background-color: wheat;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 5px 15px gray;
-  margin: 20px 0;
+:root {
+  --primary-font: "Playfair Display SC", serif;
+  --secondary-font: "Open Sans", sans-serif;
+  --primary-color: rgb(34, 43, 36);
+  --background-color: rgb(238, 220, 202);
 }
+
+.Dictionary section {
+  text-align: center;
+  background-color: var(--background-color);
+  padding: 30px;
+  border-style: groove;
+  border-color: var(--primary-color);
+  border-width: thin;
+
+  box-shadow: 0 5px 5px rgba(128, 128, 128, 0.586);
+  margin: 20px 60px;
+  font-family: var(--secondary-font);
+}
+
 .Dictionary input {
-  width: 100%;
+  width: 220px;
   border-radius: 6px;
-  padding: 6px 4px;
-  color: purple;
+  padding: 6px 6px;
+  color: var(--primary-color);
   border: 1px solid;
+  font-size: 18px;
+  font-family: var(--secondary-font);
 }
