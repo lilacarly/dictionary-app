@@ -2,14 +2,28 @@ import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
 import "./Dictionary.css";
+import Photos from "./Photos";
 
 export default function Dictionary(props) {
   let [keyword, setKeyword] = useState(props.defaultKeyword);
-  let [results, setResults] = useState(null);
+  let [definition, setDefinition] = useState(null);
   let [loaded, setLoaded] = useState(false);
+  let [photos, setPhotos] = useState(null);
+
+  function handleImages(response) {
+    setPhotos(response.data.photos);
+  }
 
   function handleResponse(response) {
-    setResults(response.data[0]);
+    setDefinition(response.data[0]);
+    const pexelsApiKey =
+      "563492ad6f917000010000012ba9a995a7494f1ca012b4c6bda270ff";
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${response.data[0].word}&per_page=9`;
+    axios
+      .get(pexelsApiUrl, {
+        headers: { Authorization: `Bearer ${pexelsApiKey}` },
+      })
+      .then(handleImages);
   }
 
   function search() {
@@ -44,7 +58,8 @@ export default function Dictionary(props) {
             />
           </form>
         </section>
-        <Results results={results} />
+        <Results definition={definition} />
+        <Photos photos={photos} />
       </div>
     );
   } else {
